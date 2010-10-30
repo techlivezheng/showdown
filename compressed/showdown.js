@@ -417,3 +417,5 @@ return "~E"+_b6+"E";
 };
 };
 
+// export
+if(typeof exports!='undefined')exports.Showdown=Showdown;
