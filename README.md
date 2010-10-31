@@ -188,3 +188,5 @@ Credits
   * Maintenance
     * [Corey Innis](http://github.com/coreyti):
       GitHub project maintainer
+    * [Remy Sharp](http://remysharp.com/):
+      CommonJS-compatibility and more
