@@ -74,11 +74,6 @@ Python:
 
 	<div id="rightContainer">
 		<div class="paneHeader">
-			<select id="paneSetting">
-				<option value="previewPane">Preview</option>
-				<option value="outputPane">HTML Output</option>
-				<option value="syntaxPane">Syntax Guide</option>
-			</select>
 		</div>
 
 		<textarea id="outputPane" class="pane" cols="80" rows="20" readonly="readonly"></textarea>
@@ -486,6 +481,14 @@ Like code blocks, code spans will be displayed in a monospaced typeface.  Markdo
 			document.write("</a>");
 			/* ]]> */
 			</script>
+		</span>
+
+		<span id="paneControls">
+			<select id="paneSetting">
+				<option value="previewPane">Preview</option>
+				<option value="outputPane">HTML Output</option>
+				<option value="syntaxPane">Syntax Guide</option>
+			</select>
 		</span>
 
 		<span id="convertTextControls">

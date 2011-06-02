@@ -179,19 +179,24 @@ textarea {
 	background-color: #ddd5d5;
 }
 
+#paneControls {
+	/*Sizing*/
+
+	/*Locating*/
+	position: absolute;
+	left: 50%;
+
+	/*Styling*/
+}
+
 #paneSetting {
 	/*Sizing*/
-	margin-left: auto;
-	margin-right: 0.5em;
 	border-width: 1px;
 
 	/*Locating*/
-	display: block;
 
 	/*Styling*/
-	color: #444444;
-	font-size: 110%;
-	font-weight: 900;
+	color: #222222;
 	border-style: solid;
 	border-color: #999999;
 	background-color: #dacccc;
