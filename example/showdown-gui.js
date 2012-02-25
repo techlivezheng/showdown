@@ -143,7 +143,7 @@ function startGui() {
 function convertText() {
 	// get input text
 	var text = inputPane.value;
-	
+
 	// if there's no change to input, cancel conversion
 	if (text && text == lastText) {
 		return;
@@ -157,7 +157,7 @@ function convertText() {
 	text = converter.makeHtml(text);
 
 	// display processing time
-	var endTime = new Date().getTime();	
+	var endTime = new Date().getTime();
 	processingTime = endTime - startTime;
 	document.getElementById("processingTime").innerHTML = processingTime+" ms";
 

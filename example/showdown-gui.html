@@ -13,15 +13,15 @@
 			font-size: 90%;
 			background-color: #e0d8d8;
 		}
-		
+
 		html {
 			overflow: hidden;
 		}
-		
+
 		textarea {
 			font-family: monospace;
 		}
-		
+
 		#pageHeader {
 			margin: 0;
 			padding: 0;
@@ -30,11 +30,11 @@
 			margin-top: 0.4em;
 			color: #766;
 		}
-		
+
 		#pageHeader h1 {
 			font-size: 3em;
 		}
-		
+
 		#pageHeader * {
 			margin: 0;
 			padding: 0;
@@ -52,7 +52,7 @@
 		#pageHeader h1 a:hover {
 			color: #fff;
 		}
-		
+
 		#pageHeader h4 a:hover {
 			text-decoration: underline;
 		}
@@ -64,21 +64,21 @@
 			width: 47.5%;
 			margin-top: -1.4em;
 		}
-		
+
 		#leftContainer {
 			float: left;
 			left: 1.5%;
 		}
-		
+
 		#rightContainer {
 			float: right;
 			right: 1.5%;
 		}
-		
+
 		#rightContainer > * {
 			float: right;
 		}
-		
+
 		.paneHeader {
 			margin: 0;
 			padding: 0;
@@ -87,19 +87,19 @@
 			display: block;
 			height: 2em;
 		}
-		
+
 		.paneHeader * {
 			position: relative;
 			font-weight: 900;
 		}
-		
+
 		.paneHeader span {
 			background-color: #ddd5d5;
 			color: #444;
 			padding: 0 0.75em;
 			font-size: 110%;
 		}
-		
+
 		#paneSetting {
 			display: block;
 			margin-left: auto;
@@ -111,7 +111,7 @@
 			color: #444;
 			border: 1px solid #999;
 		}
-		
+
 		.pane {
 			margin: 0;
 			padding: 0;
@@ -123,39 +123,39 @@
 			border: 1px solid #888;
 			border-right: 1px solid #000;
 			border-bottom: 1px solid #000;
-		
+
 			/* note: the panes get their height set with
 		       javascript; see sizeTextAreas(). */
-		
+
 			/* for now, set a height so things look nice
 			   if the user has javascript disabled */
 			height: 400px;
 		}
-		
+
 		#previewPane {
 			background-color: #f3eeee;
 		}
-		
+
 		#outputPane {
 			background-color: #6c6666;
 			color: #fff;
 			display: none;
 		}
-		
+
 		#syntaxPane {
 			background-color: #e6dede;
 			background-color: #f7ecec;
 			display: none;
 		}
-		
+
 		div.pane {
 			overflow: auto;
 		}
-		
+
 		#inputPane {
 			background-color: #fff;
 		}
-		
+
 		#previewPane {
 			padding: 0;
 		}
@@ -180,7 +180,7 @@
 		#previewPane code {
 			font-size: 1.3em;
 		}
-		
+
 		#footer {
 			margin: 0;
 			padding: 0;
@@ -191,44 +191,44 @@
 			margin-top: 0.5em;
 			font-family: Helvetica, Arial, Verdana, sans-serif;
 		}
-		
+
 		#footer a {
 			text-decoration: none;
 			color: #666;
 		}
-		
+
 		#footer a:hover {
 			text-decoration: underline;
 		}
-		
+
 		#byline {
 			padding-left: 2em;
 			color: #666;
 		}
-		
+
 		#convertTextControls {
 			position: absolute;
 			right: 5em;
 		}
-		
+
 		#convertTextButton {
 			line-height: 1em;
 			background-color: #ccbfbf;
 			color: #000;
 			border: none;
 		}
-		
+
 		#convertTextButton:hover {
 			background-color: #fff;
 			color: black;
 		}
-		
+
 		#convertTextSetting {
 			background-color: #dacccc;
 			color: #222;
 			border: 1px solid #999;
 		}
-		
+
 		#processingTime {
 			margin: 0;
 			padding: 0;
@@ -248,7 +248,7 @@
 		<h1><a href="http://www.attacklab.net/showdown-gui.html">Showdown</a></h1>
 		<h4>a javascript port of <a href="http://daringfireball.net/projects/markdown/" title="The Markdown web site">Markdown</a></h4>
 	</div>
-	
+
 	<div id="leftContainer">
 		<div class="paneHeader">
 			<span>Input</span>
@@ -264,7 +264,7 @@ This page lets you create HTML by entering text in a simple format that's easy t
 Markdown is a lightweight markup language based on the formatting conventions that people naturally use in email.  As [John Gruber] writes on the [Markdown site] [1]:
 
 &gt; The overriding design goal for Markdown's
-&gt; formatting syntax is to make it as readable 
+&gt; formatting syntax is to make it as readable
 &gt; as possible. The idea is that a
 &gt; Markdown-formatted document should be
 &gt; publishable as-is, as plain text, without
@@ -282,7 +282,7 @@ Showdown is a Javascript port of Markdown.  You can get the full [source code] b
   [source code]: http://www.attacklab.net/showdown-v0.9.zip
   [blank page]: ?blank=1 "Clear all text"
 
-</textarea> 
+</textarea>
 	</div>
 
 	<div id="rightContainer">
@@ -293,11 +293,11 @@ Showdown is a Javascript port of Markdown.  You can get the full [source code] b
 				<option value="syntaxPane">Syntax Guide</option>
 			</select>
 		</div>
-	
+
 		<textarea id="outputPane" class="pane" cols="80" rows="20" readonly="readonly"></textarea>
-	
+
 		<div id="previewPane" class="pane"><noscript><h2>You'll need to enable Javascript to use this tool.</h2></noscript></div>
-	
+
 
 
 
@@ -669,11 +669,11 @@ Like code blocks, code spans will be displayed in a monospaced typeface.  Markdo
 
 
 	</div>
-	
+
 	<div id="footer">
 		<span id="byline">
 			<b><a href="http://www.attacklab.net/showdown-v0.9.zip">Download v0.9</a></b> copyright &copy; 2007
-	
+
 			<script type="text/javascript">
 			/* <![CDATA[ */
 			function hivelogic_enkoder(){var kode=
@@ -700,12 +700,12 @@ Like code blocks, code spans will be displayed in a monospaced typeface.  Markdo
 			/* ]]> */
 			</script>
 		</span>
-	
+
 		<span id="convertTextControls">
 			<button id="convertTextButton" type="button" title="Convert text now">
 				Convert text
 			</button>
-			
+
 			<select id="convertTextSetting">
 				<option value="delayed">in the background</option>
 				<option value="continuous">every keystroke</option>
@@ -714,7 +714,7 @@ Like code blocks, code spans will be displayed in a monospaced typeface.  Markdo
 		</span>
 		<div id="processingTime" title="Last processing time">0 ms</div>
 	</div>
-	
-	
+
+
 	</body>
 </html>
