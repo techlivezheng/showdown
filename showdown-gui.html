@@ -2,10 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<title>Showdown - Markdown in Javascript</title>
+	<title>Showdown.js &amp; Highlight.js - Markdown and Syntax Highlighting in Javascript</title>
 	<script type="text/javascript" src="lib/showdown.js"></script>
 	<link rel="stylesheet" href="showdown-gui.css" />
 	<script type="text/javascript" src="showdown-gui.js"></script>
+	<link rel="stylesheet" href="highlight/highlight.css" />
+	<script type="text/javascript" src="highlight/highlight.js"></script>
 </head>
 
 <body>
@@ -48,6 +50,24 @@ Showdown is a Javascript port of Markdown.  You can get the full [source code] b
   [1]: http://daringfireball.net/projects/markdown/
   [source code]: http://www.attacklab.net/showdown-v0.9.zip
   [blank page]: ?blank=1 "Clear all text"
+
+## Syntax highlighting
+
+When combined with [highlight.js][] this starts looking as a kind of IDE :-)
+
+HTML:
+
+    &lt;h1&gt;HTML code&lt;/h1&gt;
+    &lt;p class="some"&gt;This is an example&lt;/p&gt;
+
+Python:
+
+    def func():
+      for i in [1, 2, 3]:
+        print "%s" % i
+
+
+[highlight.js]: http://softwaremaniacs.org/soft/highlight/en/
 
 </textarea>
 	</div>
