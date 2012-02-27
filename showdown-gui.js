@@ -55,6 +55,7 @@ window.onload = startGui;
 var converter;
 var convertTextTimer,processingTime;
 var lastText,lastOutput,lastRoomLeft;
+var inputACEditor, outputACEditor, syntaxACEditor;
 var convertTextSetting, convertTextButton, paneSetting;
 var inputPane,previewPane,outputPane,syntaxPane;
 var maxDelay = 3000; // longest update pause (in ms)
@@ -87,7 +88,7 @@ function startGui() {
 
 	// In case we can't capture paste events, poll for them
 	var pollingFallback = window.setInterval(function(){
-		if(inputPane.value != lastText)
+		if(inputACEditor.getSession().getValue() != lastText)
 			onInput();
 	},1000);
 
@@ -113,9 +114,17 @@ function startGui() {
 	// this is cheap; do it often
 	window.setInterval(setPaneHeights,250);
 
+	var inputContent = getInnerText(inputPane).replace(/(^\s*)|(\s*$)/g,'');
+	inputACEditor = initialACEditor("inputPane","markdown");
+	inputACEditor.getSession().setValue(inputContent);
+	inputACEditor.setTheme("ace/theme/twilight");
+
+	inputPane.style.display="block";
+	previewPane.style.display="block";
+
 	// start with blank page?
 	if (top.document.location.href.match(/\?blank=1$/))
-		inputPane.value = "";
+		inputACEditor.getSession().setValue("");
 
 	// refresh panes to avoid a hiccup
 	onPaneSettingChanged();
@@ -135,6 +144,26 @@ function startGui() {
 	outputPane.scrollTop = 0;
 }
 
+//
+//	Initial ACEditor
+//
+function initialACEditor(pane,mode) {
+	var ACEditor;
+	var editorMode;
+	ACEditor = ace.edit(pane);
+	ACEditor.setShowPrintMargin(true);
+	ACEditor.getSession().setValue("the new text here");
+	ACEditor.getSession().setTabSize(4);
+	ACEditor.getSession().setUseSoftTabs(true);
+	ACEditor.getSession().setUseWrapMode(true);
+	if (mode == "markdown") {
+		editorMode = require("ace/mode/markdown").Mode;
+	} else if (mode == "html") {
+		editorMode = require("ace/mode/html").Mode;
+	}
+	ACEditor.getSession().setMode(new editorMode());
+	return ACEditor;
+}
 
 //
 //	Conversion
@@ -142,7 +171,7 @@ function startGui() {
 
 function convertText() {
 	// get input text
-	var text = inputPane.value;
+	var text = inputACEditor.getSession().getValue();
 
 	// if there's no change to input, cancel conversion
 	if (text && text == lastText) {
@@ -167,7 +196,9 @@ function convertText() {
 	// update right pane
 	if (paneSetting.value == "outputPane") {
 		// the output pane is selected
-		outputPane.value = text;
+		outputACEditor = initialACEditor("outputPane","html");
+		outputACEditor.getSession().setValue(text);
+		outputACEditor.setReadOnly(true);
 	} else if (paneSetting.value == "previewPane") {
 		// the preview pane is selected
 		previewPane.innerHTML = text;
@@ -217,9 +248,17 @@ function onPaneSettingChanged() {
 	lastRoomLeft = 0;  // hack: force resize of new pane
 	setPaneHeights();
 
-	if (paneSetting.value == "outputPane") {
+	if (paneSetting.value == "syntaxPane") {
+		// Update syntax pane
+		var syntaxContent = getInnerText(syntaxPane).replace(/(^\s*)|(\s*$)/g,'');
+		syntaxACEditor=initialACEditor("syntaxPane","markdown");
+		syntaxACEditor.getSession().setValue(syntaxContent);
+		syntaxACEditor.setReadOnly(true);
+	} else if (paneSetting.value == "outputPane") {
 		// Update output pane
-		outputPane.value = lastOutput;
+		outputACEditor=initialACEditor("outputPane","html");
+		outputACEditor.getSession().setValue(lastOutput);
+		outputACEditor.setReadOnly(true);
 	} else if (paneSetting.value == "previewPane") {
 		// Update preview pane
 		previewPane.innerHTML = lastOutput;
@@ -354,4 +393,16 @@ function setPaneHeights() {
 	previewPane.style.height = roomLeft + "px";
 	outputPane.style.height = roomLeft + "px";
 	syntaxPane.style.height = roomLeft + "px";
+}
+
+function getInnerText(element) {
+	return (typeof element.textContent == 'string') ? element.textContent : element.innerText;
+}
+
+function setInnerText(element, text){
+	if (typeof element.textContent == 'string') {
+		element.textContent = text;
+	} else {
+		element.innerText = text;
+	}
 }

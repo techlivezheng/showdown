@@ -28,15 +28,6 @@ body {
 	background-color: #e0d8d8;
 }
 
-textarea {
-	/*Sizing*/
-
-	/*Locating*/
-
-	/*Styling*/
-	font-family: monospace;
-}
-
 #pageHeader {
 	/*Sizing*/
 	margin: 0;
@@ -171,7 +162,7 @@ textarea {
 	/*Sizing*/
 
 	/*Locating*/
-	display: block;
+	display: none;
 
 	/*Styling*/
 	background-color: #f3eeee;
@@ -202,7 +193,7 @@ textarea {
 	/*Sizing*/
 
 	/*Locating*/
-	display: block;
+	display: none;
 	overflow: auto;
 
 	/*Styling*/
