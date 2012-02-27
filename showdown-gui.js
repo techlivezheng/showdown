@@ -332,10 +332,10 @@ function getWindowHeight(element) {
 
 function setPaneHeights() {
 	var textarea  = inputPane;
-	var footer = document.getElementById("footer");
+	var pageFooter = document.getElementById("pageFooter");
 
 	var windowHeight = getWindowHeight();
-	var footerHeight = getElementHeight(footer);
+	var footerHeight = getElementHeight(pageFooter);
 	var textareaTop = getTop(textarea);
 
 	// figure out how much room the panes should fill
