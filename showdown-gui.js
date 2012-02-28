@@ -51,36 +51,35 @@ window.onload = startGui;
 //
 // Globals
 //
-
-var converter;
-var convertTextTimer,processingTime;
-var lastText,lastOutput,lastRoomLeft;
-var inputACEditor, outputACEditor, syntaxACEditor;
-var convertTextSetting, convertTextButton, paneSetting;
-var inputPane,previewPane,outputPane,syntaxPane;
 var maxDelay = 3000; // longest update pause (in ms)
+var converter;
+var processingTime, convertTextTimer;
+var lastText, lastOutput, lastRoomLeft;
+var inputACEditor, outputACEditor, syntaxACEditor;
+var inputPane, outputPane, syntaxPane, previewPane;
+var paneSetting, convertTextButton, convertTextSetting;
 
 
 //
 //	Initialization
 //
-
 function startGui() {
 	// find elements
-	convertTextSetting = document.getElementById("convertTextSetting");
-	convertTextButton = document.getElementById("convertTextButton");
 	paneSetting = document.getElementById("paneSetting");
+	convertTextButton = document.getElementById("convertTextButton");
+	convertTextSetting = document.getElementById("convertTextSetting");
 
 	inputPane = document.getElementById("inputPane");
-	previewPane = document.getElementById("previewPane");
 	outputPane = document.getElementById("outputPane");
 	syntaxPane = document.getElementById("syntaxPane");
+	previewPane = document.getElementById("previewPane");
 
 	// set event handlers
-	convertTextSetting.onchange = onConvertTextSettingChanged;
-	convertTextButton.onclick = onConvertTextButtonClicked;
-	paneSetting.onchange = onPaneSettingChanged;
 	window.onresize = setPaneHeights;
+
+	paneSetting.onchange = onPaneSettingChanged;
+	convertTextButton.onclick = onConvertTextButtonClicked;
+	convertTextSetting.onchange = onConvertTextSettingChanged;
 
 	// First, try registering for keyup events
 	// (There's no harm in calling onInput() repeatedly)
@@ -140,8 +139,8 @@ function startGui() {
 
 	// start the other panes at the top
 	// (our smart scrolling moved them to the bottom)
-	previewPane.scrollTop = 0;
 	outputPane.scrollTop = 0;
+	previewPane.scrollTop = 0;
 }
 
 //
@@ -168,7 +167,6 @@ function initialACEditor(pane,mode) {
 //
 //	Conversion
 //
-
 function convertText() {
 	// get input text
 	var text = inputACEditor.getSession().getValue();
@@ -185,14 +183,14 @@ function convertText() {
 	// Do the conversion
 	text = converter.makeHtml(text);
 
-	// display processing time
 	var endTime = new Date().getTime();
+
+	// display processing time
 	processingTime = endTime - startTime;
 	document.getElementById("processingTime").innerHTML = "Processing Time:&nbsp;&nbsp;" + processingTime +"&nbsp;ms";
 
 	// save proportional scroll positions
 	saveScrollPositions();
-
 	// update right pane
 	if (paneSetting.value == "outputPane") {
 		// the output pane is selected
@@ -222,49 +220,6 @@ function convertText() {
 //
 //	Event handlers
 //
-
-function onConvertTextSettingChanged() {
-	// If the user just enabled automatic
-	// updates, we'll do one now.
-	onInput();
-}
-
-function onConvertTextButtonClicked() {
-	// hack: force the converter to run
-	lastText = "";
-
-	convertText();
-	inputPane.focus();
-}
-
-function onPaneSettingChanged() {
-	previewPane.style.display = "none";
-	outputPane.style.display = "none";
-	syntaxPane.style.display = "none";
-
-	// now make the selected one visible
-	top[paneSetting.value].style.display = "block";
-
-	lastRoomLeft = 0;  // hack: force resize of new pane
-	setPaneHeights();
-
-	if (paneSetting.value == "syntaxPane") {
-		// Update syntax pane
-		var syntaxContent = getInnerText(syntaxPane).replace(/(^\s*)|(\s*$)/g,'');
-		syntaxACEditor=initialACEditor("syntaxPane","markdown");
-		syntaxACEditor.getSession().setValue(syntaxContent);
-		syntaxACEditor.setReadOnly(true);
-	} else if (paneSetting.value == "outputPane") {
-		// Update output pane
-		outputACEditor=initialACEditor("outputPane","html");
-		outputACEditor.getSession().setValue(lastOutput);
-		outputACEditor.setReadOnly(true);
-	} else if (paneSetting.value == "previewPane") {
-		// Update preview pane
-		previewPane.innerHTML = lastOutput;
-	}
-}
-
 function onInput() {
 // In "delayed" mode, we do the conversion at pauses in input.
 // The pause is equal to the last runtime, so that slow
@@ -296,6 +251,48 @@ function onInput() {
 	}
 }
 
+function onPaneSettingChanged() {
+	previewPane.style.display = "none";
+	outputPane.style.display = "none";
+	syntaxPane.style.display = "none";
+
+	// now make the selected one visible
+	top[paneSetting.value].style.display = "block";
+
+	lastRoomLeft = 0;  // hack: force resize of new pane
+
+	setPaneHeights();
+
+	if (paneSetting.value == "syntaxPane") {
+		// Update syntax pane
+		var syntaxContent = getInnerText(syntaxPane).replace(/(^\s*)|(\s*$)/g,'');
+		syntaxACEditor=initialACEditor("syntaxPane","markdown");
+		syntaxACEditor.getSession().setValue(syntaxContent);
+		syntaxACEditor.setReadOnly(true);
+	} else if (paneSetting.value == "outputPane") {
+		// Update output pane
+		outputACEditor=initialACEditor("outputPane","html");
+		outputACEditor.getSession().setValue(lastOutput);
+		outputACEditor.setReadOnly(true);
+	} else if (paneSetting.value == "previewPane") {
+		// Update preview pane
+		previewPane.innerHTML = lastOutput;
+	}
+}
+
+function onConvertTextButtonClicked() {
+	// hack: force the converter to run
+	lastText = "";
+
+	convertText();
+	inputPane.focus();
+}
+
+function onConvertTextSettingChanged() {
+	// If the user just enabled automatic
+	// updates, we'll do one now.
+	onInput();
+}
 
 //
 // Smart scrollbar adjustment
@@ -306,8 +303,8 @@ function onInput() {
 // restoring them afterwards.
 //
 
-var previewScrollPos;
 var outputScrollPos;
+var previewScrollPos;
 
 function getScrollPos(element) {
 	// favor the bottom when the text first overflows the window
@@ -321,8 +318,8 @@ function setScrollPos(element,pos) {
 }
 
 function saveScrollPositions() {
-	previewScrollPos = getScrollPos(previewPane);
 	outputScrollPos = getScrollPos(outputPane);
+	previewScrollPos = getScrollPos(previewPane);
 }
 
 function restoreScrollPositions() {
@@ -330,8 +327,8 @@ function restoreScrollPositions() {
 	// has been updated after a change in contents
 	previewPane.scrollTop = previewPane.scrollTop;
 
-	setScrollPos(previewPane,previewScrollPos);
 	setScrollPos(outputPane,outputScrollPos);
+	setScrollPos(previewPane,previewScrollPos);
 }
 
 //
@@ -354,12 +351,6 @@ function getTop(element) {
 	return sum;
 }
 
-function getElementHeight(element) {
-	var height = element.clientHeight;
-	if (!height) height = element.scrollHeight;
-	return height;
-}
-
 function getWindowHeight(element) {
 	if (window.innerHeight)
 		return window.innerHeight;
@@ -369,13 +360,20 @@ function getWindowHeight(element) {
 		return document.body.clientHeight;
 }
 
+function getElementHeight(element) {
+	var height = element.clientHeight;
+	if (!height) height = element.scrollHeight;
+	return height;
+}
+
 function setPaneHeights() {
-	var textarea  = inputPane;
 	var pageFooter = document.getElementById("pageFooter");
 
+	var textarea  = inputPane;
+
+	var textareaTop = getTop(textarea);
 	var windowHeight = getWindowHeight();
 	var footerHeight = getElementHeight(pageFooter);
-	var textareaTop = getTop(textarea);
 
 	// figure out how much room the panes should fill
 	var roomLeft = windowHeight - footerHeight - textareaTop;
@@ -386,13 +384,14 @@ function setPaneHeights() {
 	if (roomLeft == lastRoomLeft) {
 		return;
 	}
+
 	lastRoomLeft = roomLeft;
 
 	// resize all panes
 	inputPane.style.height = roomLeft + "px";
-	previewPane.style.height = roomLeft + "px";
 	outputPane.style.height = roomLeft + "px";
 	syntaxPane.style.height = roomLeft + "px";
+	previewPane.style.height = roomLeft + "px";
 }
 
 function getInnerText(element) {
