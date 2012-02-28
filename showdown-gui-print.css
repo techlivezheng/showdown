@@ -1,0 +1,24 @@
+body {
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	font-size: 75%;
+}
+
+#pageHeader, #leftContainer, #footer, .paneHeader {
+	display: none !important;
+}
+
+#rightContainer {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	left: 0;
+}
+
+#previewPane {
+	background-color: #FFFFFF;
+	border: 0px;
+}
+
+a {
+	color: #000000;
+}
