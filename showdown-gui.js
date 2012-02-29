@@ -75,7 +75,7 @@ function startGui() {
 	previewPane = document.getElementById("previewPane");
 
 	// set event handlers
-	window.onresize = setPaneHeights;
+	window.onresize = setPaneHeight;
 
 	paneSetting.onchange = onPaneSettingChanged;
 	convertTextButton.onclick = onConvertTextButtonClicked;
@@ -111,7 +111,7 @@ function startGui() {
 
 	// poll for changes in font size
 	// this is cheap; do it often
-	window.setInterval(setPaneHeights,250);
+	window.setInterval(setPaneHeight,250);
 
 	var inputContent = getInnerText(inputPane).replace(/(^\s*)|(\s*$)/g,'');
 	inputACEditor = initialACEditor("inputPane","markdown");
@@ -261,7 +261,7 @@ function onPaneSettingChanged() {
 
 	lastHeightLeft = 0;  // hack: force resize of new pane
 
-	setPaneHeights();
+	setPaneHeight();
 
 	if (paneSetting.value == "syntaxPane") {
 		// Update syntax pane
@@ -366,7 +366,7 @@ function getElementHeight(element) {
 	return height;
 }
 
-function setPaneHeights() {
+function setPaneHeight() {
 	var pageFooter = document.getElementById("pageFooter");
 
 	var textarea  = inputPane;
