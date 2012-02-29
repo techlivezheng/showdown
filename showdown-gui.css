@@ -179,29 +179,6 @@ textarea {
 	background-color: #ddd5d5;
 }
 
-#paneControls {
-	/*Sizing*/
-
-	/*Locating*/
-	position: absolute;
-	left: 50%;
-
-	/*Styling*/
-}
-
-#paneSetting {
-	/*Sizing*/
-	border-width: 1px;
-
-	/*Locating*/
-
-	/*Styling*/
-	color: #222222;
-	border-style: solid;
-	border-color: #999999;
-	background-color: #dacccc;
-}
-
 .pane {
 	/*Sizing*/
 	width: 100%;
@@ -358,6 +335,29 @@ div.pane {
 
 	/*Styling*/
 	color: #666666;
+}
+
+#paneControls {
+	/*Sizing*/
+
+	/*Locating*/
+	position: absolute;
+	left: 50%;
+
+	/*Styling*/
+}
+
+#paneSetting {
+	/*Sizing*/
+	border-width: 1px;
+
+	/*Locating*/
+
+	/*Styling*/
+	color: #222222;
+	border-style: solid;
+	border-color: #999999;
+	background-color: #dacccc;
 }
 
 #convertTextControls {
