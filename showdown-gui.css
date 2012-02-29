@@ -7,9 +7,7 @@ body {
 	/*Locating*/
 
 	/*Styling*/
-	font-size: 90%;
 	font-family: Helvetica, Arial, Verdana, sans-serif;
-	background-color: #e0d8d8;
 }
 
 html {
@@ -19,6 +17,16 @@ html {
 	/*Locating*/
 
 	/*Styling*/
+}
+
+body {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
+	font-size: 80%;
+	background-color: #e0d8d8;
 }
 
 textarea {
