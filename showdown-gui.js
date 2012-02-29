@@ -54,7 +54,7 @@ window.onload = startGui;
 var maxDelay = 3000; // longest update pause (in ms)
 var converter;
 var processingTime, convertTextTimer;
-var lastText, lastOutput, lastRoomLeft;
+var lastText, lastOutput, lastHeightLeft;
 var inputACEditor, outputACEditor, syntaxACEditor;
 var inputPane, outputPane, syntaxPane, previewPane;
 var paneSetting, convertTextButton, convertTextSetting;
@@ -259,7 +259,7 @@ function onPaneSettingChanged() {
 	// now make the selected one visible
 	top[paneSetting.value].style.display = "block";
 
-	lastRoomLeft = 0;  // hack: force resize of new pane
+	lastHeightLeft = 0;  // hack: force resize of new pane
 
 	setPaneHeights();
 
@@ -376,22 +376,22 @@ function setPaneHeights() {
 	var footerHeight = getElementHeight(pageFooter);
 
 	// figure out how much room the panes should fill
-	var roomLeft = windowHeight - footerHeight - textareaTop;
+	var heightLeft = windowHeight - footerHeight - textareaTop;
 
-	if (roomLeft < 0) roomLeft = 0;
+	if (heightLeft < 0) heightLeft = 0;
 
 	// if it hasn't changed, return
-	if (roomLeft == lastRoomLeft) {
+	if (heightLeft == lastHeightLeft) {
 		return;
 	}
 
-	lastRoomLeft = roomLeft;
+	lastHeightLeft = heightLeft;
 
 	// resize all panes
-	inputPane.style.height = roomLeft + "px";
-	outputPane.style.height = roomLeft + "px";
-	syntaxPane.style.height = roomLeft + "px";
-	previewPane.style.height = roomLeft + "px";
+	inputPane.style.height = heightLeft + "px";
+	outputPane.style.height = heightLeft + "px";
+	syntaxPane.style.height = heightLeft + "px";
+	previewPane.style.height = heightLeft + "px";
 }
 
 function getInnerText(element) {
