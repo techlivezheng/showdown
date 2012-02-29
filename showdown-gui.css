@@ -179,9 +179,10 @@ textarea {
 	/*Sizing*/
 
 	/*Locating*/
+	display: block;
 
 	/*Styling*/
-	background-color: #ffffff;
+	background-color: #f3eeee;
 }
 
 #outputPane {
@@ -192,7 +193,7 @@ textarea {
 
 	/*Styling*/
 	color: #ffffff;
-	background-color: #6c6666;
+	background-color: #f3eeee;
 }
 
 #syntaxPane {
@@ -202,13 +203,15 @@ textarea {
 	/*Locating*/
 
 	/*Styling*/
-	background-color: #f7ecec;
+	background-color: #f3eeee;
 }
 
 #previewPane {
 	/*Sizing*/
 
 	/*Locating*/
+	display: block;
+	overflow: auto;
 
 	/*Styling*/
 	background-color: #f3eeee;
