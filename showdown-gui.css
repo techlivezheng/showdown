@@ -331,7 +331,7 @@ div.pane {
 
 	/*Locating*/
 	position: absolute;
-	right: 5em;
+	right: 0;
 
 	/*Styling*/
 }
@@ -380,9 +380,9 @@ div.pane {
 	/*Locating*/
 	position: absolute;
 	top: 0;
-	right: 1em;
+	left: 0;
 
 	/*Styling*/
 	color: #999999;
-	text-align: right;
+	text-align: left;
 }
