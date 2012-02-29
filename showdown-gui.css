@@ -326,6 +326,22 @@ div.pane {
 	background-color: #dacccc;
 }
 
+#processingTime {
+	/*Sizing*/
+	width: 20em;
+	margin: 0;
+	padding: 0;
+
+	/*Locating*/
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	/*Styling*/
+	color: #999999;
+	text-align: left;
+}
+
 #convertTextControls {
 	/*Sizing*/
 
@@ -369,20 +385,4 @@ div.pane {
 	border-style: solid;
 	border-color: #999999;
 	background-color: #dacccc;
-}
-
-#processingTime {
-	/*Sizing*/
-	width: 20em;
-	margin: 0;
-	padding: 0;
-
-	/*Locating*/
-	position: absolute;
-	top: 0;
-	left: 0;
-
-	/*Styling*/
-	color: #999999;
-	text-align: left;
 }
