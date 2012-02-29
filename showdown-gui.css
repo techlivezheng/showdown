@@ -134,14 +134,6 @@ textarea {
 	/*Styling*/
 }
 
-#rightContainer > * {
-	/*Sizing*/
-	float: right;
-	/*Locating*/
-
-	/*Styling*/
-}
-
 .paneHeader {
 	/*Sizing*/
 	width: 100%;
