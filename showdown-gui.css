@@ -7,7 +7,6 @@ body {
 	/*Locating*/
 
 	/*Styling*/
-	font-family: Helvetica, Arial, Verdana, sans-serif;
 }
 
 html {
@@ -193,7 +192,6 @@ textarea {
 	color: #444444;
 	font-size: 110%;
 	font-weight: 900;
-	font-family: Arial, Verdana, sans-serif;
 	border-style: solid;
 	border-color: #999999;
 	background-color: #dacccc;
@@ -326,7 +324,6 @@ div.pane {
 	float: left;
 
 	/*Styling*/
-	font-family: Helvetica, Arial, Verdana, sans-serif;
 }
 
 #footer a {
