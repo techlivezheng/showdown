@@ -188,6 +188,7 @@ body {
 
 #previewPane {
 	/*Sizing*/
+	padding-left: 10px;
 
 	/*Locating*/
 	display: none;

@@ -53,11 +53,12 @@ window.onload = startGui;
 //
 var maxDelay = 3000; // longest update pause (in ms)
 var converter;
+var leftContainer, rightContainer;
 var processingTime, convertTextTimer;
-var lastText, lastOutput, lastHeightLeft;
 var inputACEditor, outputACEditor, syntaxACEditor;
 var inputPane, outputPane, syntaxPane, previewPane;
 var paneSetting, convertTextButton, convertTextSetting;
+var lastText, lastOutput, lastWidthLeft, lastHeightLeft;
 
 
 //
@@ -73,9 +74,11 @@ function startGui() {
 	outputPane = document.getElementById("outputPane");
 	syntaxPane = document.getElementById("syntaxPane");
 	previewPane = document.getElementById("previewPane");
+	leftContainer = document.getElementById("leftContainer");
+	rightContainer = document.getElementById("rightContainer");
 
 	// set event handlers
-	window.onresize = setPaneHeight;
+	window.onresize = paneResize;
 
 	paneSetting.onchange = onPaneSettingChanged;
 	convertTextButton.onclick = onConvertTextButtonClicked;
@@ -111,7 +114,7 @@ function startGui() {
 
 	// poll for changes in font size
 	// this is cheap; do it often
-	window.setInterval(setPaneHeight,250);
+	window.setInterval(paneResize,250);
 
 	var inputContent = getInnerText(inputPane).replace(/(^\s*)|(\s*$)/g,'');
 	inputACEditor = initialACEditor("inputPane","markdown");
@@ -261,7 +264,7 @@ function onPaneSettingChanged() {
 
 	lastHeightLeft = 0;  // hack: force resize of new pane
 
-	setPaneHeight();
+	paneResize();
 
 	if (paneSetting.value == "syntaxPane") {
 		// Update syntax pane
@@ -332,7 +335,7 @@ function restoreScrollPositions() {
 }
 
 //
-// Textarea resizing
+// Pane resizing
 //
 // Some browsers (i.e. IE) refuse to set textarea
 // percentage heights in standards mode. (But other units?
@@ -351,6 +354,20 @@ function getTopOffset(element) {
 	return sum;
 }
 
+function getWindowWidth() {
+	var windowWidth = 0;
+
+	if (typeof(window.innerWidth) == 'number') {
+		windowWidth = window.innerWidth;
+	} else if (document.documentElement && document.documentElement.clientWidth) {
+		windowWidth = document.documentElement.clientWidth;
+	} else if (document.body && document.body.clientWidth) {
+		windowWidth = document.body.clientWidth;
+	}
+
+	return windowWidth;
+}
+
 function getWindowHeight(element) {
 	var windowHeight = 0;
 
@@ -365,10 +382,35 @@ function getWindowHeight(element) {
 	return windowHeight;
 }
 
+function getElementWidth(element) {
+	var width = element.clientWidth;
+	if (!width) width = element.scrollWidth;
+	return width;
+}
+
 function getElementHeight(element) {
 	var height = element.clientHeight;
 	if (!height) height = element.scrollHeight;
 	return height;
+}
+
+function setPaneWidth() {
+	var elementWidth = getElementWidth(rightContainer);
+
+	// figure out how much room the panes should fill
+	var widthLeft = elementWidth - 12;
+
+	if (widthLeft < 0) widthLeft = 0;
+
+	// if it hasn't changed, return
+	if (widthLeft == lastWidthLeft) {
+		return;
+	}
+
+	lastWidthLeft = widthLeft;
+
+	// only preview pane need to be resized
+	previewPane.style.width = widthLeft + "px";
 }
 
 function setPaneHeight() {
@@ -395,6 +437,14 @@ function setPaneHeight() {
 	outputPane.style.height = heightLeft + "px";
 	syntaxPane.style.height = heightLeft + "px";
 	previewPane.style.height = heightLeft + "px";
+
+	leftContainer.style.height = heightLeft + "px";
+	rightContainer.style.height = heightLeft + "px";
+}
+
+function paneResize(){
+	setPaneWidth();
+	setPaneHeight();
 }
 
 function getInnerText(element) {
