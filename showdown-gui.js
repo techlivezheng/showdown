@@ -344,7 +344,7 @@ function restoreScrollPositions() {
 // on other browsers.
 //
 
-function getTop(element) {
+function getTopOffset(element) {
 	var sum = element.offsetTop;
 	while(element = element.offsetParent)
 		sum += element.offsetTop;
@@ -369,14 +369,12 @@ function getElementHeight(element) {
 function setPaneHeight() {
 	var pageFooter = document.getElementById("pageFooter");
 
-	var textarea  = inputPane;
-
-	var textareaTop = getTop(textarea);
+	var awayTop = getTopOffset(inputPane);
 	var windowHeight = getWindowHeight();
 	var footerHeight = getElementHeight(pageFooter);
 
 	// figure out how much room the panes should fill
-	var heightLeft = windowHeight - footerHeight - textareaTop;
+	var heightLeft = windowHeight - footerHeight - awayTop;
 
 	if (heightLeft < 0) heightLeft = 0;
 
