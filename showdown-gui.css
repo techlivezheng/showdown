@@ -175,15 +175,6 @@ textarea {
 	background-color: #eeeeee;
 }
 
-#previewPane {
-	/*Sizing*/
-
-	/*Locating*/
-
-	/*Styling*/
-	background-color: #f3eeee;
-}
-
 #outputPane {
 	/*Sizing*/
 	display: none;
@@ -203,6 +194,15 @@ textarea {
 
 	/*Styling*/
 	background-color: #f7ecec;
+}
+
+#previewPane {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
+	background-color: #f3eeee;
 }
 
 div.pane {
