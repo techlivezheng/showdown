@@ -209,15 +209,6 @@ textarea {
 	background-color: #f3eeee;
 }
 
-div.pane {
-	/*Sizing*/
-
-	/*Locating*/
-	overflow: auto;
-
-	/*Styling*/
-}
-
 #previewPane > * {
 	/*Sizing*/
 	margin-left: 4px;
