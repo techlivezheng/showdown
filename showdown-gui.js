@@ -159,7 +159,7 @@ function convertText() {
 	// display processing time
 	var endTime = new Date().getTime();
 	processingTime = endTime - startTime;
-	document.getElementById("processingTime").innerHTML = processingTime+" ms";
+	document.getElementById("processingTime").innerHTML = "Processing Time:&nbsp;&nbsp;" + processingTime +"&nbsp;ms";
 
 	// save proportional scroll positions
 	saveScrollPositions();
