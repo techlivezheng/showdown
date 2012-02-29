@@ -283,7 +283,8 @@ body {
 
 	/*Locating*/
 	position: absolute;
-	left: 50%;
+	top: 0;
+	right: 0;
 
 	/*Styling*/
 }
@@ -322,7 +323,8 @@ body {
 
 	/*Locating*/
 	position: absolute;
-	right: 0;
+	top: 0;
+	right: 50%;
 
 	/*Styling*/
 }
@@ -335,7 +337,7 @@ body {
 
 	/*Styling*/
 	color: #000000;
-	line-height: 1em;
+	line-height: 1.5em;
 	background-color: #ccbfbf;
 }
 
