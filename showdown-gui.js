@@ -352,12 +352,17 @@ function getTopOffset(element) {
 }
 
 function getWindowHeight(element) {
-	if (window.innerHeight)
-		return window.innerHeight;
-	else if (document.documentElement && document.documentElement.clientHeight)
-		return document.documentElement.clientHeight;
-	else if (document.body)
-		return document.body.clientHeight;
+	var windowHeight = 0;
+
+	if (typeof(window.innerHeight) == 'number') {
+		windowHeight = window.innerHeight;
+	} else if (document.documentElement && document.documentElement.clientHeight) {
+		windowHeight = document.documentElement.clientHeight;
+	} else if (document.body && document.body.clientHeight) {
+		windowHeight = document.body.clientHeight;
+	}
+
+	return windowHeight;
 }
 
 function getElementHeight(element) {
