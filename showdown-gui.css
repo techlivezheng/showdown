@@ -1,232 +1,423 @@
 html,
 body {
+	/*Sizing*/
 	margin:0;
 	padding:0;
-	font-family: Helvetica, Arial, Verdana, sans-serif;
+
+	/*Locating*/
+
+	/*Styling*/
 	font-size: 90%;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
 	background-color: #e0d8d8;
 }
 
 html {
+	/*Sizing*/
 	overflow: hidden;
+
+	/*Locating*/
+
+	/*Styling*/
 }
 
 textarea {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
 	font-family: monospace;
 }
 
 #pageHeader {
+	/*Sizing*/
 	margin: 0;
-	padding: 0;
-	text-align: center;
-	margin-bottom: 0;
 	margin-top: 0.4em;
+	margin-bottom: 0;
+	padding: 0;
+
+	/*Locating*/
+
+	/*Styling*/
 	color: #776666;
+	text-align: center;
 }
 
 #pageHeader h1 {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
 	font-size: 3em;
 }
 
 #pageHeader * {
+	/*Sizing*/
 	margin: 0;
 	padding: 0;
+
+	/*Locating*/
+
+	/*Styling*/
 	line-height: 1em;
 	font-weight: 100;
 }
 
 #pageHeader a {
-	color: #776666;
-	text-decoration: none;
+	/*Sizing*/
+
+	/*Locating*/
 	position: relative;
+
+	/*Styling*/
+	color: #776666;
 	z-index: 20;
+	text-decoration: none;
 }
 
 #pageHeader h1 a:hover {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
 	color: #ffffff;
 }
 
 #pageHeader h4 a:hover {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
 	text-decoration: underline;
 }
 
 #leftContainer,
 #rightContainer {
-	margin: 0;
-	padding: 0;
-	position: relative;
+	/*Sizing*/
 	width: 47.5%;
+	margin: 0;
 	margin-top: -1.4em;
+	padding: 0;
+
+	/*Locating*/
+	position: relative;
+
+	/*Styling*/
 }
 
 #leftContainer {
+	/*Sizing*/
 	float: left;
+
+	/*Locating*/
 	left: 1.5%;
+
+	/*Styling*/
 }
 
 #rightContainer {
+	/*Sizing*/
 	float: right;
+
+	/*Locating*/
 	right: 1.5%;
+
+	/*Styling*/
 }
 
 #rightContainer > * {
+	/*Sizing*/
 	float: right;
+	/*Locating*/
+
+	/*Styling*/
 }
 
 .paneHeader {
+	/*Sizing*/
+	width: 100%;
+	height: 2em;
 	margin: 0;
 	padding: 0;
+
+	/*Locating*/
 	position: relative;
-	width: 100%;
 	display: block;
-	height: 2em;
+
+	/*Styling*/
 }
 
 .paneHeader * {
+	/*Sizing*/
 	position: relative;
+
+	/*Locating*/
+
+	/*Styling*/
 	font-weight: 900;
 }
 
 .paneHeader span {
-	background-color: #ddd5d5;
-	color: #444444;
+	/*Sizing*/
 	padding: 0 0.75em;
+
+	/*Locating*/
+
+	/*Styling*/
+	color: #444444;
 	font-size: 110%;
+	background-color: #ddd5d5;
 }
 
 #paneSetting {
-	display: block;
+	/*Sizing*/
 	margin-left: auto;
 	margin-right: 0.5em;
+	border-width: 1px;
+
+	/*Locating*/
+	display: block;
+
+	/*Styling*/
+	color: #444444;
 	font-size: 110%;
 	font-weight: 900;
 	font-family: Arial, Verdana, sans-serif;
+	border-style: solid;
+	border-color: #999999;
 	background-color: #dacccc;
-	color: #444444;
-	border: 1px solid #999999;
 }
 
 .pane {
+	/*Sizing*/
+	width: 100%;
+	height: 400px;/* for now, set a height so things look nice if the user has javascript disabled */
 	margin: 0;
 	padding: 0;
 	padding-left: 4px; /* pane padding */
-	width: 100%;
-	border: none;
-	background-color: #eeeeee;
-	display: block;
-	border: 1px solid #888888;
-	border-right: 1px solid #000000;
-	border-bottom: 1px solid #000000;
+	border-width: 1px;
 
-	/* for now, set a height so things look nice
-		if the user has javascript disabled */
-	height: 400px;
+	/*Locating*/
+	display: block;
+
+	/*Styling*/
+	border-style: solid;
+	border-color: #888888;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	background-color: #eeeeee;
 }
 
 #previewPane {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
 	background-color: #f3eeee;
 }
 
 #outputPane {
-	background-color: #6c6666;
-	color: #ffffff;
+	/*Sizing*/
 	display: none;
+
+	/*Locating*/
+
+	/*Styling*/
+	color: #ffffff;
+	background-color: #6c6666;
 }
 
 #syntaxPane {
+	/*Sizing*/
+	display: none;
+
+	/*Locating*/
+
+	/*Styling*/
 	background-color: #e6dede;
 	background-color: #f7ecec;
-	display: none;
 }
 
 div.pane {
+	/*Sizing*/
+
+	/*Locating*/
 	overflow: auto;
+
+	/*Styling*/
 }
 
 #inputPane {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
 	background-color: #ffffff;
 }
 
 #previewPane {
+	/*Sizing*/
 	padding: 0;
+
+	/*Locating*/
+
+	/*Styling*/
 }
 
 #previewPane > * {
+	/*Sizing*/
 	margin-left: 4px;
 	margin-right: 4px;
+
+	/*Locating*/
+
+	/*Styling*/
 }
 
 #previewPane > blockquote {
+	/*Sizing*/
 	margin-left: 3em;
+
+	/*Locating*/
+
+	/*Styling*/
 }
 
 #previewPane > :first-child {
+	/*Sizing*/
 	margin-top: 4px; /* pane padding */
+
+	/*Locating*/
+
+	/*Styling*/
 }
 
 #previewPane * {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
 	line-height: 1.4em;
 }
 
 #previewPane code {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
 	font-size: 1.3em;
 }
 
 #footer {
-	margin: 0;
-	padding: 0;
-	position: relative;
-	float: left;
+	/*Sizing*/
 	width: 100%;
 	height: 2.5em;
+	margin: 0;
 	margin-top: 0.5em;
+	padding: 0;
+
+	/*Locating*/
+	position: relative;
+	float: left;
+
+	/*Styling*/
 	font-family: Helvetica, Arial, Verdana, sans-serif;
 }
 
 #footer a {
-	text-decoration: none;
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
 	color: #666666;
+	text-decoration: none;
 }
 
 #footer a:hover {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
 	text-decoration: underline;
 }
 
 #byline {
+	/*Sizing*/
 	padding-left: 2em;
+
+	/*Locating*/
+
+	/*Styling*/
 	color: #666666;
 }
 
 #convertTextControls {
+	/*Sizing*/
+
+	/*Locating*/
 	position: absolute;
 	right: 5em;
+
+	/*Styling*/
 }
 
 #convertTextButton {
+	/*Sizing*/
+	border: none;
+
+	/*Locating*/
+
+	/*Styling*/
+	color: #000000;
 	line-height: 1em;
 	background-color: #ccbfbf;
-	color: #000000;
-	border: none;
 }
 
 #convertTextButton:hover {
-	background-color: #ffffff;
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
 	color: black;
+	background-color: #ffffff;
 }
 
 #convertTextSetting {
-	background-color: #dacccc;
+	/*Sizing*/
+	border-width: 1px;
+
+	/*Locating*/
+
+	/*Styling*/
 	color: #222222;
-	border: 1px solid #999999;
+	border-style: solid;
+	border-color: #999999;
+	background-color: #dacccc;
 }
 
 #processingTime {
+	/*Sizing*/
+	width: 4em;
 	margin: 0;
 	padding: 0;
-	width: 4em;
-	text-align: right;
-	color: #999999;
+
+	/*Locating*/
 	position: absolute;
-	right: 1em;
 	top: 0;
+	right: 1em;
+
+	/*Styling*/
+	color: #999999;
+	text-align: right;
 }
