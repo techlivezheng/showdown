@@ -20,7 +20,7 @@ textarea {
 	text-align: center;
 	margin-bottom: 0;
 	margin-top: 0.4em;
-	color: #766;
+	color: #776666;
 }
 
 #pageHeader h1 {
@@ -35,14 +35,14 @@ textarea {
 }
 
 #pageHeader a {
-	color: #766;
+	color: #776666;
 	text-decoration: none;
 	position: relative;
 	z-index: 20;
 }
 
 #pageHeader h1 a:hover {
-	color: #fff;
+	color: #ffffff;
 }
 
 #pageHeader h4 a:hover {
@@ -87,7 +87,7 @@ textarea {
 
 .paneHeader span {
 	background-color: #ddd5d5;
-	color: #444;
+	color: #444444;
 	padding: 0 0.75em;
 	font-size: 110%;
 }
@@ -100,8 +100,8 @@ textarea {
 	font-weight: 900;
 	font-family: Arial, Verdana, sans-serif;
 	background-color: #dacccc;
-	color: #444;
-	border: 1px solid #999;
+	color: #444444;
+	border: 1px solid #999999;
 }
 
 .pane {
@@ -110,11 +110,11 @@ textarea {
 	padding-left: 4px; /* pane padding */
 	width: 100%;
 	border: none;
-	background-color: #eee;
+	background-color: #eeeeee;
 	display: block;
-	border: 1px solid #888;
-	border-right: 1px solid #000;
-	border-bottom: 1px solid #000;
+	border: 1px solid #888888;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
 
 	/* note: the panes get their height set with
 		javascript; see sizeTextAreas(). */
@@ -130,7 +130,7 @@ textarea {
 
 #outputPane {
 	background-color: #6c6666;
-	color: #fff;
+	color: #ffffff;
 	display: none;
 }
 
@@ -145,7 +145,7 @@ div.pane {
 }
 
 #inputPane {
-	background-color: #fff;
+	background-color: #ffffff;
 }
 
 #previewPane {
@@ -186,7 +186,7 @@ div.pane {
 
 #footer a {
 	text-decoration: none;
-	color: #666;
+	color: #666666;
 }
 
 #footer a:hover {
@@ -195,7 +195,7 @@ div.pane {
 
 #byline {
 	padding-left: 2em;
-	color: #666;
+	color: #666666;
 }
 
 #convertTextControls {
@@ -206,19 +206,19 @@ div.pane {
 #convertTextButton {
 	line-height: 1em;
 	background-color: #ccbfbf;
-	color: #000;
+	color: #000000;
 	border: none;
 }
 
 #convertTextButton:hover {
-	background-color: #fff;
+	background-color: #ffffff;
 	color: black;
 }
 
 #convertTextSetting {
 	background-color: #dacccc;
-	color: #222;
-	border: 1px solid #999;
+	color: #222222;
+	border: 1px solid #999999;
 }
 
 #processingTime {
@@ -226,7 +226,7 @@ div.pane {
 	padding: 0;
 	width: 4em;
 	text-align: right;
-	color: #999;
+	color: #999999;
 	position: absolute;
 	right: 1em;
 	top: 0;
