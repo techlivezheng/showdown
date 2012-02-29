@@ -177,7 +177,7 @@ function convertText() {
 
 	// restore proportional scroll positions
 	restoreScrollPositions();
-};
+}
 
 
 //
