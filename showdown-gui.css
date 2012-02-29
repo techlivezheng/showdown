@@ -184,15 +184,6 @@ body {
 	/*Styling*/
 }
 
-#previewPane > blockquote {
-	/*Sizing*/
-	margin-left: 3em;
-
-	/*Locating*/
-
-	/*Styling*/
-}
-
 #previewPane > :first-child {
 	/*Sizing*/
 	margin-top: 4px; /* pane padding */
@@ -208,7 +199,136 @@ body {
 	/*Locating*/
 
 	/*Styling*/
-	line-height: 1.4em;
+	line-height: 1.5em;
+}
+
+#previewPane p {
+	/*Sizing*/
+	margin: 1em 0;
+
+	/*Locating*/
+
+	/*Styling*/
+	text-indent: 2em;
+}
+
+#previewPane h1,
+#previewPane h2,
+#previewPane h3,
+#previewPane h4,
+#previewPane h5,
+#previewPane h6 {
+	/*Sizing*/
+	margin: 0.75em 0;
+
+	/*Locating*/
+
+	/*Styling*/
+	font-weight: bold;
+}
+
+#previewPane h1 {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
+	font-size: 2em;
+	text-align: center;
+}
+
+#previewPane h2 {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
+	font-size: 1.8em;
+}
+
+#previewPane h3 {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
+	font-size: 1.6em;
+}
+
+#previewPane h4 {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
+	font-size: 1.4em;
+}
+
+#previewPane h5 {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
+	font-size: 1.2em;
+}
+
+#previewPane h6 {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
+	font-size: 1.0em;
+}
+
+#previewPane ul,
+#previewPane ol {
+	/*Sizing*/
+	margin-left: 20px;
+
+	/*Locating*/
+
+	/*Styling*/
+}
+
+#previewPane li {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
+}
+
+#previewPane li * {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
+	text-indent: 0em;
+}
+
+#previewPane pre {
+	/*Sizing*/
+	margin: 10px;
+	padding: 10px;
+
+	/*Locating*/
+	overflow: auto;
+
+	/*Styling*/
+	color: #f2f2f2;
+	background-color: #141414;
+}
+
+#previewPane > pre {
+	/*Sizing*/
+	margin-left: 3em;
+
+	/*Locating*/
+
+	/*Styling*/
 }
 
 #previewPane code {
@@ -217,7 +337,29 @@ body {
 	/*Locating*/
 
 	/*Styling*/
+	display: inline;
 	font-size: 1.3em;
+	font-family: 'monospace';
+	background-color: transparent;
+}
+
+#previewPane blockquote {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
+	padding-left: 40px;
+	border-left: 5px #7d7d7d solid;
+}
+
+#previewPane > blockquote {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
+	margin-left: 3em;
 }
 
 #pageFooter {
