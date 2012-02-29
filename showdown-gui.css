@@ -95,7 +95,7 @@ body {
 #leftContainer,
 #rightContainer {
 	/*Sizing*/
-	width: 47.5%;
+	width: 50%;
 	margin: 0;
 	padding: 0;
 
@@ -110,7 +110,6 @@ body {
 	float: left;
 
 	/*Locating*/
-	left: 1.5%;
 
 	/*Styling*/
 }
@@ -120,7 +119,6 @@ body {
 	float: right;
 
 	/*Locating*/
-	right: 1.5%;
 
 	/*Styling*/
 }
@@ -144,7 +142,6 @@ body {
 	height: 400px;/* for now, set a height so things look nice if the user has javascript disabled */
 	margin: 0;
 	padding: 0;
-	padding-left: 4px; /* pane padding */
 	border-width: 1px;
 
 	/*Locating*/
