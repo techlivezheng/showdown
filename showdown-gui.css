@@ -118,9 +118,6 @@ textarea {
 	border-right: 1px solid #000000;
 	border-bottom: 1px solid #000000;
 
-	/* note: the panes get their height set with
-		javascript; see sizeTextAreas(). */
-
 	/* for now, set a height so things look nice
 		if the user has javascript disabled */
 	height: 400px;
