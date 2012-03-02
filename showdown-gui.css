@@ -115,7 +115,6 @@ body {
 .pane {
 	/*Sizing*/
 	width: 100%;
-	height: 400px;/* for now, set a height so things look nice if the user has javascript disabled */
 	margin: 0;
 	padding: 0;
 	border-width: 1px;
