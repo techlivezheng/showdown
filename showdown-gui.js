@@ -398,7 +398,7 @@ function setPaneWidth() {
 	var elementWidth = getElementWidth(rightContainer);
 
 	// figure out how much room the panes should fill
-	var widthLeft = elementWidth - 12;
+	var widthLeft = elementWidth - 10;
 
 	if (widthLeft < 0) widthLeft = 0;
 
