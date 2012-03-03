@@ -34,7 +34,6 @@ textarea {
 	/*Sizing*/
 	margin: 0;
 	margin-top: 0.4em;
-	margin-bottom: 0;
 	padding: 0;
 
 	/*Locating*/
@@ -239,7 +238,6 @@ textarea {
 	/*Locating*/
 
 	/*Styling*/
-	background-color: #e6dede;
 	background-color: #f7ecec;
 }
 
@@ -259,15 +257,6 @@ div.pane {
 
 	/*Styling*/
 	background-color: #ffffff;
-}
-
-#previewPane {
-	/*Sizing*/
-	padding: 0;
-
-	/*Locating*/
-
-	/*Styling*/
 }
 
 #previewPane > * {
