@@ -50,15 +50,6 @@ textarea {
 	text-align: center;
 }
 
-#pageHeader h1 {
-	/*Sizing*/
-
-	/*Locating*/
-
-	/*Styling*/
-	font-size: 3em;
-}
-
 #pageHeader * {
 	/*Sizing*/
 	margin: 0;
@@ -69,6 +60,15 @@ textarea {
 	/*Styling*/
 	line-height: 1em;
 	font-weight: 100;
+}
+
+#pageHeader h1 {
+	/*Sizing*/
+
+	/*Locating*/
+
+	/*Styling*/
+	font-size: 3em;
 }
 
 #pageHeader a {
