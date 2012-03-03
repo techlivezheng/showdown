@@ -323,7 +323,7 @@ function getWindowHeight(element) {
 }
 
 function setPaneHeights() {
-    var textarea  = inputPane;
+	var textarea  = inputPane;
 	var footer = document.getElementById("footer");
 
 	var windowHeight = getWindowHeight();
