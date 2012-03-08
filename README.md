@@ -154,3 +154,11 @@ In most cases, Showdown's output is identical to that of Perl Markdown v1.0.2b7.
         </a>
 
     Showdown won't.  But still, don't do that.
+
+
+
+Specs
+-----
+
+To run specs and ensure no regressions are present, open
+`file:///<project>/spec/SpecRunner.html` in Firefox.
